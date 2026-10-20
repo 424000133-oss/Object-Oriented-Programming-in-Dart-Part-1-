@@ -1,0 +1,38 @@
+class Gamer {
+  String name;
+  int level;
+  int _points;
+
+  Gamer(this.name, this.level, this._points);
+
+  int getPoints() {
+    return _points;
+  }
+
+  void addPoints(int points) {
+    _points += points;
+    print('$name earned $points points!');
+  }
+
+  void displayInfo() {
+    print('Gamer: $name');
+    print('Level: $level');
+    print('Total Points: $_points');
+    print('--------------------');
+  }
+}
+
+void main() {
+
+  Gamer gamer1 = Gamer('Andrey', 5, 100);
+  Gamer gamer2 = Gamer('Player2', 3, 50);
+
+  List<Gamer> gamers = [gamer1, gamer2];
+
+  gamer1.addPoints(25);
+  gamer2.addPoints(40);
+
+  for (Gamer gamer in gamers) {
+    gamer.displayInfo();
+  }
+}
